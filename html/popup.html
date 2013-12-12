@@ -4,15 +4,21 @@
     <title>Tab Collector extension</title>
     <link href="../css/popup.css" rel="stylesheet">
 
+    <script src="../src/Configuration.js"></script>
     <script src="../src/TabsCollector.js"></script>
     <script src="../src/init.js"></script>
   </head>
   <body>
     <div class="form">
         <fieldset>
-            <label>Survival time</label><input type="text">
+            <div class="row">
+                <label>Survival time</label><input id="survivalTime" type="text">
+            </div>
+            <div class="row">
+                <label>Tabs limit</label><input id="tabsLimit" type="text">
+            </div>
         </fieldset>
     </div>
-    <button>Collect!</button>
+    <button>Save</button>
   </body>
 </html>

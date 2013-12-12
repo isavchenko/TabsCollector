@@ -2,3 +2,16 @@ body {
     min-width:357px;
     overflow-x:hidden;
 }
+
+.form {
+    display: table;
+}
+
+.form .row {
+    display: table-row;
+}
+
+.form .row label,
+.form .row input {
+    display: table-cell;
+}

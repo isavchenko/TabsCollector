@@ -1,15 +1,14 @@
-describe ("Tabs collector", function () {
+describe("Tabs collector", function () {
 
-  beforeEach (function () {
-    chrome = {
-      tabs: {
-
+  beforeEach(function () {
+    Configuration = {
+      getSurvivalInterval: function () {
+        return 5000;
       }
     };
   });
 
-  it ("checks if tab survived", function () {
-    TabsCollector.survivalInterval = 5000;
+  it("checks if tab survived", function () {
     var lastVisit = {visitTime: new Date().getTime() - 6000};
     expect(TabsCollector._tabSurvived(lastVisit)).toBe(false);
 

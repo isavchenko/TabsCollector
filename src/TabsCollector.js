@@ -1,8 +1,4 @@
 var TabsCollector = {
-  //todo: extract to configuration
-  survivalInterval: /*10 * 24 * 60 * 6*/5 * 1000,
-  tabsLimit: 15,
-
   collect: function () {
     chrome.tabs.query({currentWindow: true}, function (tabs) {
       for (var i = 0; i < tabs.length; i++) {
@@ -19,7 +15,7 @@ var TabsCollector = {
   },
 
   _tabSurvived: function (lastVisit) {
-    var survivalIntervalStart = new Date().getTime() - this.survivalInterval;
+    var survivalIntervalStart = new Date().getTime() - Configuration.getSurvivalInterval();
     return lastVisit.visitTime > survivalIntervalStart;
   }
 };
